@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "news-watch-6b49e": {
+      "hosting": {
+        "news-watch": [
+          "news-watch-6b49e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "news-watch-6b49e"
+  }
+}
