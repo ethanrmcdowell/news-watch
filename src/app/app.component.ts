@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './data.service';
 import { newsData }  from '../assets/news';
+import { MatIconModule } from '@angular/material/icon';
+
+
 
 @Component({
   selector: 'app-root',
@@ -15,14 +18,14 @@ export class AppComponent {
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    // this.getData();
-    this.topStories = newsData;
-    console.log("top stories ->", this.topStories);
+    this.getData('en');
+    // this.topStories = newsData;
+    // console.log("top stories ->", this.topStories);
   }
 
-  async getData() {
+  async getData(language: string) {
     try {
-      this.newsData = await this.dataService.getNews();
+      this.newsData = await this.dataService.getNews(language);
       // this.topStories = this.newsData.data.data;
 
       this.topStories = this.newsData.data.results;

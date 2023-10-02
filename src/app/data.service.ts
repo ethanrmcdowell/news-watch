@@ -11,8 +11,11 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getNews() {
-    let url = "https://newsdata.io/api/1/news?apikey=pub_26343bd51473001e6f4a9f2a8a16d68b91285&country=us";
+  getNews(language: string) {
+    let url = "https://newsdata.io/api/1/news?apikey=pub_26343bd51473001e6f4a9f2a8a16d68b91285&country=us&language=";
+    url += language;
+
+    console.log("URL", url);
 
     return axios.get(url)
       .then(response => response)

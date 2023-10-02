@@ -39,3 +39,20 @@ a {
 .topStories {
     padding-bottom: 100px;
 }
+
+mat-icon {
+    margin-top: 3px;
+    margin-right: 8px;
+}
+
+.titleDiv {
+    display: flex;
+}
+
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+.langChange {
+    padding: 2px;
+}
