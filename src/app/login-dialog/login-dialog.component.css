@@ -1,0 +1,16 @@
+.dialogContainer {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+mat-form-field {
+    width: 60% !important;
+    margin: auto;
+}
+
+mat-button-toggle-group {
+    margin: auto;
+    margin-bottom: 15px;
+}

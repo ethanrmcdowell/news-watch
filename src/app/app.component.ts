@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './data.service';
 import { newsData }  from '../assets/news';
-import { MatIconModule } from '@angular/material/icon';
-
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -15,12 +15,12 @@ export class AppComponent {
   newsData: any;
   topStories: any;
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, public dialog: MatDialog) {}
 
   ngOnInit() {
-    this.getData('en');
-    // this.topStories = newsData;
-    // console.log("top stories ->", this.topStories);
+    // this.getData('en');
+    this.topStories = newsData;
+    console.log("top stories ->", this.topStories);
   }
 
   async getData(language: string) {
@@ -33,5 +33,17 @@ export class AppComponent {
     } catch (error) {
       console.error("Error:", error);
     }
+  }
+
+  loginClick() {
+    const dialogRef = this.dialog.open(LoginDialogComponent, {
+      panelClass: "dialog-responsive",
+      height: '400px',
+      width: '600px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

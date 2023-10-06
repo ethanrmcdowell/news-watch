@@ -1,9 +1,17 @@
 <mat-toolbar>
   <span class="titleDiv">
     <mat-icon fontIcon="language"></mat-icon>
-    <h3>news watch</h3>
+    <h3>
+      powered by <a href="https://newsdata.io/" target="_blank">newsdata.io</a>
+    </h3>
   </span>
   <span class="toolbar-spacer"></span>
+  <mat-icon
+    fontIcon="person_outline"
+    class="loginIcon"
+    (click)="loginClick()"
+  ></mat-icon>
+  <span class="toolbar-spacer-two"></span>
   <span (click)="getData('en')" class="langChange">en</span>
   <span (click)="getData('fr')" class="langChange">fr</span>
   <span (click)="getData('es')" class="langChange">sp</span>
@@ -20,6 +28,7 @@
         {{ article.title }}
       </a>
     </h3>
+    <mat-icon fontIcon="star_border" class="starIcon"></mat-icon>
     <div class="splitContainer">
       <div *ngIf="article.image_url" class="articleSplit articleImage">
         <a href="{{ article.link }}" target="_blank">

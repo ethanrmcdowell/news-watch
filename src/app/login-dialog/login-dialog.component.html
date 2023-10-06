@@ -1,0 +1,42 @@
+<div class="dialogContainer">
+  <p>Login to access your saved articles:</p>
+  <mat-button-toggle-group
+    nam="registerLogin"
+    class="registerLogin"
+    (change)="loginToggle()"
+    [value]="toggle"
+  >
+    <mat-button-toggle value="login" selected>Login</mat-button-toggle>
+    <mat-button-toggle value="register">Register</mat-button-toggle>
+  </mat-button-toggle-group>
+  <div *ngIf="toggle === 'login'">
+    <mat-form-field>
+      <mat-label>E-mail address</mat-label>
+      <input class="loginInput" matInput type="text" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input class="loginInput" matInput type="password" />
+    </mat-form-field>
+    <div class="btnContainer">
+      <button mat-button>Login</button>
+    </div>
+  </div>
+  <div *ngIf="toggle === 'register'">
+    <mat-form-field>
+      <mat-label>E-mail address</mat-label>
+      <input class="loginInput" matInput type="text" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input class="loginInput" matInput type="password" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Repeat Password</mat-label>
+      <input class="loginInput" matInput type="password" />
+    </mat-form-field>
+    <div class="btnContainer">
+      <button mat-button>Register</button>
+    </div>
+  </div>
+</div>
