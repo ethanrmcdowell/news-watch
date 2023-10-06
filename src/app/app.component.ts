@@ -3,6 +3,7 @@ import { DataService } from './data.service';
 import { newsData }  from '../assets/news';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { MatInput } from '@angular/material/input';
 
 
 @Component({

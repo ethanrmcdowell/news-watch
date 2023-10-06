@@ -12,11 +12,23 @@
   <div *ngIf="toggle === 'login'">
     <mat-form-field>
       <mat-label>E-mail address</mat-label>
-      <input class="loginInput" matInput type="text" />
+      <input
+        class="loginInput"
+        matInput
+        type="text"
+        [(ngModel)]="userEmail"
+        [ngModelOptions]="{ standalone: true }"
+      />
     </mat-form-field>
     <mat-form-field>
       <mat-label>Password</mat-label>
-      <input class="loginInput" matInput type="password" />
+      <input
+        class="loginInput"
+        matInput
+        type="password"
+        [(ngModel)]="userPass"
+        [ngModelOptions]="{ standalone: true }"
+      />
     </mat-form-field>
     <div class="btnContainer">
       <button mat-button>Login</button>
@@ -25,15 +37,33 @@
   <div *ngIf="toggle === 'register'">
     <mat-form-field>
       <mat-label>E-mail address</mat-label>
-      <input class="loginInput" matInput type="text" />
+      <input
+        class="loginInput"
+        matInput
+        type="text"
+        [(ngModel)]="userEmail"
+        [ngModelOptions]="{ standalone: true }"
+      />
     </mat-form-field>
     <mat-form-field>
       <mat-label>Password</mat-label>
-      <input class="loginInput" matInput type="password" />
+      <input
+        class="loginInput"
+        matInput
+        type="password"
+        [(ngModel)]="userPass"
+        [ngModelOptions]="{ standalone: true }"
+      />
     </mat-form-field>
     <mat-form-field>
       <mat-label>Repeat Password</mat-label>
-      <input class="loginInput" matInput type="password" />
+      <input
+        class="loginInput"
+        matInput
+        type="password"
+        [(ngModel)]="userPass2"
+        [ngModelOptions]="{ standalone: true }"
+      />
     </mat-form-field>
     <div class="btnContainer">
       <button mat-button>Register</button>
